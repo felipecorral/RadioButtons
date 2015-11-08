@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean isChecking = true;
-    private int mCheckedId = R.id.rbuno;
 
     RadioGroup rg2;
     RadioGroup rg3;
@@ -26,16 +25,12 @@ public class MainActivity extends AppCompatActivity {
         rg3 = (RadioGroup) findViewById(R.id.rgbotones3);
 
 
-
-
-
         rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId != -1 && isChecking) {
                     isChecking = false;
                     rg3.clearCheck();
-                    mCheckedId = checkedId;
                 }
                 isChecking = true;
             }
@@ -47,14 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 if (checkedId != -1 && isChecking) {
                     isChecking = false;
                     rg2.clearCheck();
-                    mCheckedId = checkedId;
                 }
                 isChecking = true;
             }
         });
-
-
-
 
     }
 
